@@ -1,0 +1,203 @@
+/* General styles */
+.app-wrapper {
+  padding: 2rem;
+  background: linear-gradient(to right, #202f37, #2f5e6f, #264f61);
+
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(80deg, #00dbde, #fc00ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Progress container */
+.progress-wrapper {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progress-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.progress-icon {
+  width: 24px;
+  height: 24px;
+  color: #9ca3af;
+}
+
+.progress-icon.completed {
+  color: #d946ef;
+}
+
+.progress-icon.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progress-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #f9fafb;
+}
+
+.progress-status {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.progress-percentage {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.progress-percentage.completed {
+  color: #d946ef;
+}
+
+.progress-bar-container {
+  position: relative;
+  height: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Default bar fill */
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect */
+.progress-bar-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ===================== TYPE-SPECIFIC THEMES ===================== */
+
+/* === File Upload === */
+.file-upload .progress-bar-fill {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  box-shadow: 0 0 10px #00c6ff;
+}
+.file-upload .progress-percentage.completed {
+  color: #00c6ff;
+}
+
+/* === Task Complete === */
+.task-complete .progress-bar-fill {
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  box-shadow: 0 0 12px #d946ef;
+}
+.task-complete .progress-percentage.completed {
+  color: #d946ef;
+}
+
+/* === Data Processing === */
+.data-processing .progress-bar-fill {
+  background: linear-gradient(90deg, #22c55e, #10b981);
+  box-shadow: 0 0 12px #34d399;
+}
+.data-processing .progress-percentage.completed {
+  color: #10b981;
+}
+
+/* ===================== Success Message ===================== */
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: #4c1d95;
+  border: 1px solid #d946ef;
+  border-radius: 8px;
+  color: #f5d0fe;
+  font-weight: 500;
+}
+
+.success-icon {
+  width: 20px;
+  height: 20px;
+  color: #d946ef;
+}
